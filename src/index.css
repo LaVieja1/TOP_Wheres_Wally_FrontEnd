@@ -9,3 +9,17 @@
     background-color: #131313;
     color: white;
 }
+
+html,
+body,
+#root {
+    height: 100%;
+}
+
+img {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
