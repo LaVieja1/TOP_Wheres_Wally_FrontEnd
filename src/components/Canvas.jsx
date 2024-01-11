@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import SelectorPopup from "./selector/SelectorPopup";
 
+// STYLE
+import './styles/Canvas.css';
+
 const Canvas = () => {
     const [clickCoordinates, setClickCoordinates] = useState({ x: 1, y: 1 });
     const [selectorVisible, setSelectorVisible] = useState(false);
@@ -24,12 +27,13 @@ const Canvas = () => {
     }, []);
 
     return (
-        <div className="image-container relative overflow-hidden rounded-2xl">
-            <img src="/assets/wally1.png" className="search-image -mb-1 hover:cursor-grab" draggable="false"></img>
+        <div className="image-container">
+            <img src="/assets/wally1.png" className="search-image" draggable="false"></img>
             {selectorVisible && (
                 <SelectorPopup
                     clickCoordinates={clickCoordinates}
                     setSelectorVisible={setSelectorVisible}
+                    //handleWallySelection={handleWallySelection}
                     clientY={clientY}
                 />
             )}

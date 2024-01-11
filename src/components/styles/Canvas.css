@@ -1,0 +1,33 @@
+.canvas-container {
+    position: relative;
+    display: flex;
+    max-width: 90vw;
+    height: 90vh;
+    flex-direction: column;
+
+    @media (min-width: 768px) {
+        flex-direction: row;
+    }
+}
+
+.image-container {
+    position: relative;
+
+    width: 100%;
+    overflow: hidden;
+
+    @media (pointer: coarse) {
+        /* Attempt to hide scroll bars on touch screens */
+        overflow: scroll;
+    }
+
+    border-radius: 15px;
+
+    .search-image {
+        margin-bottom: -5px;
+
+        &:hover {
+        cursor: grab;
+        }
+    }
+}

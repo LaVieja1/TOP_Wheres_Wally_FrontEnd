@@ -1,8 +1,14 @@
 import { Icon } from "@iconify/react";
 
+import SelectionOptions from "./SelectorOptions";
+
+// STYLE
+import '../styles/SelectorPopup.css';
+
 export default function SelectorPopup({
     clickCoordinates,
     setSelectorVisible,
+    handleWallySelection,
     clientY,
 }) {
     const { x, y } = clickCoordinates;
@@ -29,9 +35,8 @@ export default function SelectorPopup({
 
     return (
         <div
-            className="selector-popup absolute grid justify-items-center"
+            className="selector-popup fade-in"
             style={{
-                zIndex: 1,
                 top: selectorWrapperTop,
                 left: selectorWrapperLeft,
                 rowGap
@@ -44,9 +49,8 @@ export default function SelectorPopup({
             />
 
             <div
-                className="selector-menu grid items-center justify-items-center justify-center rounded-3xl text-black bg-yellow-100 border-2 border-solid border-black"
+                className="selector-menu"
                 style={{
-                    gridTemplateRows: "50px 1fr",
                     height: selectorWrapperHeight,
                     width: selectorWrapperWidth,
                     order: selectorMenuOrder,
@@ -55,12 +59,16 @@ export default function SelectorPopup({
                 <button
                     type="button"
                     aria-label="Cerrar menu"
-                    className="selector-close icon-button w-8 hover:cursor-pointer focus-visible:border-solid focus-visible:border-black focus-visible:border-2"
+                    className="selector-close icon-button"
                     onClick={() => setSelectorVisible(false)}
                 >
                     <Icon icon="material-symbols-light:close" height={40} />
                 </button>
                 Cual es?
+                <SelectionOptions
+                    clickCoordinates={clickCoordinates}
+                    //handleWallySelection={handleWallySelection}
+                />
             </div>
         </div>
     );
