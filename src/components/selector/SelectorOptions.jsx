@@ -28,7 +28,7 @@ export default function SelectionOptions({
 
     function handlePreviousImage() {
         if (hasPrevious) setImageIndex(imageIndex - 1);
-        else setImageIndex(wallyList.length - 1);
+        else setImageIndex(wallyList[0].length - 1);
     }
 
     return (

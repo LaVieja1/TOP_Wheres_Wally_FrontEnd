@@ -9,8 +9,8 @@ const wallyList = [
             imageUrl: 'assets/wallies/ladron.png',
         },
         {
-            name: 'payaso',
-            imageUrl: 'assets/wallies/payaso.png',
+            name: 'wizard',
+            imageUrl: 'assets/wallies/wizard.png',
         }
     ]
 ];
