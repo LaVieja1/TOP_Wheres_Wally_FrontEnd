@@ -1,0 +1,48 @@
+.game-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.game-container > div {
+    width: 350px;
+    background-color: rgba(69, 172, 188, 0.816);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.game-img {
+    height: 300px;
+}
+
+.game-img img {
+    width: 350px;
+    height: 300px;
+    object-fit: cover;
+}
+
+.game-text {
+    padding: 15px 10px;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+}
+
+.game-text a {
+    padding: 8px 20px;
+    background-color: rgb(230, 68, 117);
+    color: white;
+    font-weight: 500;
+    font-size: 17px;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.game-text a:hover {
+    transform: scale(1.1);
+    filter: brightness(100%);
+    transition: all 0.5s ease-in-out;
+}
