@@ -4,6 +4,8 @@ import GameImage from "./GameImage";
 import './styles/GameContainer.css';
 
 export default function GameContainer() {
+    const { setGameTimer } = useOutletContext();
+
     return (
     <div className="game-container">
         <div className="" >
@@ -11,7 +13,7 @@ export default function GameContainer() {
                 <GameImage />
             </div>
             <div className="game-text">
-                <Link to="/game">
+                <Link to="/game" onClick={() => setGameTimer(0)}>
                     Jugar
                 </Link>
             </div>

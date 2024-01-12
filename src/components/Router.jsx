@@ -7,12 +7,12 @@ export default function Router() {
     const router = createBrowserRouter([
         {
             path: '/',
-            element: <HomePage />
+            element: <App />,
+            children: [
+                {path: '/', element: <HomePage />},
+                {path: '/game', element: <GamePage />},
+            ],
         },
-        {
-            path: '/game',
-            element: <GamePage />
-        }
     ]);
     return <RouterProvider router={router} />;
 }

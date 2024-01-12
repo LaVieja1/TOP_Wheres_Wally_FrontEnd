@@ -9,7 +9,6 @@ export default function HomePage() {
 
     return (
         <div className="home-page">
-            <Header />
             <h2>Juegos</h2>
             <GameContainer />
         </div>
