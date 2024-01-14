@@ -30,3 +30,10 @@
     font-weight: 500;
     font-size: 20px;
 }
+
+@media (max-width: 525px) {
+    .end-popup {
+        width: 300px;
+        padding: 15px;
+    }
+}

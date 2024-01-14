@@ -7,10 +7,6 @@
     padding-top: 82px;
 }
 
-.game-page {
-    overflow: scroll;
-}
-
 ::-webkit-scrollbar {
     height: 10px;
     width: 10px;
@@ -39,7 +35,6 @@
 
 #root {
     position: relative;
-    overflow: hidden;
 }
 
 body {

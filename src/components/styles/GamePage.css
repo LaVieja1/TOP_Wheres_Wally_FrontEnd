@@ -56,4 +56,9 @@
     .main-img {
         width: auto;
     }
+
+    .alert {
+        padding: 12px 17px;
+        font-size: 15px;
+    }
 }

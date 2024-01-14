@@ -1,6 +1,7 @@
-import { useEffect, useState } from "react"
-import Header from "./components/Header"
+import ScrollToTop from "./components/ScrollToTop";
+import Header from "./components/Header";
 import { Outlet, useLoaderData } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 function App() {
   const [lbEntries, setlbEntries] = useState([]);
@@ -31,6 +32,7 @@ function App() {
 
   return (
     <>
+      <ScrollToTop prevPath={prevPath} setPrevPath={setPrevPath} />
       <Header games={games} lastlbKey={lastlbKey} gameTimer={gameTimer} />
       <Outlet
         context={{
