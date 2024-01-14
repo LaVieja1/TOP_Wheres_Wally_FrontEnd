@@ -1,7 +1,9 @@
-export default function GameImage() {
+export default function GameImage({ game, imgClass, handleClick }) {
     return (
         <img
-            src="/assets/wally1.png"
+            onClick={handleClick ? handleClick : null}
+            className={imgClass ? imgClass : null}
+            src={'http://localhost:3000/api/img/games/' + game._id}
             alt=""
             draggable='false'
         />

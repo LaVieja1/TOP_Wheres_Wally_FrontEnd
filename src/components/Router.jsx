@@ -1,5 +1,6 @@
 import App from "../App";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import gameLoader from '../loaders/gameLoader';
 import HomePage from "../pages/HomePage";
 import GamePage from "../pages/GamePage";
 
@@ -8,9 +9,10 @@ export default function Router() {
         {
             path: '/',
             element: <App />,
+            loader: gameLoader,
             children: [
                 {path: '/', element: <HomePage />},
-                {path: '/game', element: <GamePage />},
+                {path: '/game/:gameKey', element: <GamePage />},
             ],
         },
     ]);

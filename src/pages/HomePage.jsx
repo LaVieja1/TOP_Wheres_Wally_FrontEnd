@@ -5,12 +5,12 @@ import Header from "../components/Header";
 import '../components/styles/HomePage.css'
 
 export default function HomePage() {
-    //const { games } = useOutletContext();
+    const { games } = useOutletContext();
 
     return (
         <div className="home-page">
             <h2>Juegos</h2>
-            <GameContainer />
+            <GameContainer page="home" games={games} />
         </div>
     );
 }
