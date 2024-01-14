@@ -1,31 +1,98 @@
-.header-nav {
+.header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 6px 4px;
-    gap: 8px;
+    padding: 20px 25px;
+    background-color: #131313;
+    position: relative;
+    z-index: 10;
+    position: fixed;
     width: 100%;
-    max-height: 9rem;
-    transition: 1s ease-in-out;
-
-    .logo {
-
-        .logo-img {
-            object-fit: fill;
-            max-width: 5rem;
-            max-height: 5rem;
-        }
-    }
-
-    .nav-link:hover {
-        transform: scale(1.1);
-    }
+    gap: 10px;
+    box-shadow: 0 1px 15px rgb(25, 22, 24);
+    height: 82px;
 }
 
-a {
-    text-decoration: none;
+.logo-img {
+    object-fit: fill;
+    max-width: 5rem;
+    max-height: 5rem;
 }
 
-a:visited {
-    color: white;
+.nav {
+    display: flex;
+    gap: 10px;
+    font-size: 17.5px;
+    align-items: center;
+}
+
+.header a {
+    cursor: pointer;
+    padding: 7px 10px;
+    border-radius: 7px;
+}
+
+.link:hover {
+    transition: 0.5s ease-in-out all;
+    transform: scale(1.05);
+    color: aqua;
+}
+
+.menu-btn {
+    display: none;
+}
+
+@media (max-width: 525px) {
+    .header {
+        padding: 20px 10px;
+    }
+
+    .logo-img {
+        max-width: 4rem;
+        max-height: 4rem;
+    }
+
+    .nav {
+        position: absolute;
+        top: 60px;
+        right: 25px;
+        flex-direction: column;
+        display: none;
+        background-color: #131313;
+        border-radius: 7px;
+        box-shadow: 0 1px 15px rgb(25, 22, 24);
+        overflow: hidden;
+        gap: 0;
+    }
+
+    .nav a {
+        padding: 17px 20px;
+        width: 100%;
+        border-radius: 0;
+        text-align: center;
+    }
+
+    .show {
+        display: flex;
+    }
+
+    .menu-btn {
+        display: flex;
+        cursor: pointer;
+        padding: 5px;
+        border: none;
+        background-color: #131313;
+        border-radius: 7px;
+    }
+
+    .menu-btn:hover {
+        background-color: rgb(68, 200, 200);
+        transition: background-color 0.5s ease-in-out;
+    }
+
+    .menu-btn img {
+        width: 30px;
+        filter: invert(100%) sepia(9%) saturate(7451%) hue-rotate(277deg) brightness(112%)
+            contrast(111%);
+    }
 }

@@ -45,17 +45,17 @@ const Header = ({ games, lastLbKey, gameTimer }) => {
     };
 
     return (
-        <nav className='header-nav'>
+        <nav className='header'>
             <Link to="/" className='logo'>
-                <img src='/assets/wally-logo.png' className='logo-img nav-link'></img>
+                <img src='/assets/wally-logo.png' className='logo-img link'></img>
             </Link>
             {!gameKey ? (
                 <div onBlur={(e) => handleCloseDropdown(e)}>
                     <div className={showMenu ? 'nav show' : 'nav'}>
-                        <Link to={lastLbKey ? '/leaderboard/' + lastLbKey : '/leaderboard/1'}>
+                        <Link to={lastLbKey ? '/leaderboard/' + lastLbKey : '/leaderboard/1'} className='link'>
                             <p>Puntuaciones</p>
                         </Link>
-                        <Link to="https://github.com/LaVieja1" className='nav-link'>
+                        <Link to="https://github.com/LaVieja1" className='link'>
                             <Icon icon="mdi:github" width={80} height={40} />
                         </Link>
                     </div>

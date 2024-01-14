@@ -7,15 +7,27 @@
     font-family: 'Roboto Mono', sans-serif;
 }
 
-html,
-body,
 #root {
-    height: 100%;
+    position: relative;
+    overflow: hidden;
 }
 
 body {
     background-color: #131313;
+}
+
+a {
+    text-decoration: none;
     color: white;
+}
+
+a:visited {
+    color: white;
+}
+
+button {
+    font-family: inherit;
+    font-size: inherit;
 }
 
 img {
