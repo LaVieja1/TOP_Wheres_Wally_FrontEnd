@@ -1,0 +1,60 @@
+.leaderboard-page {
+    text-align: center;
+    margin: 0 10px 30px;
+}
+
+.lb-games {
+    cursor: pointer;
+}
+
+.lb-title {
+    font-weight: 500;
+    margin: 30px 0 25px;
+    font-size: 28px;
+    color: white;
+}
+
+.leaderboard-page .game-text {
+    padding: 30px 10px;
+}
+
+.lb-game-title {
+    font-weight: 500;
+    margin: 40px 0 25px;
+    font-size: 25px;
+    color: white;
+}
+
+.selected {
+    outline: aqua solid 1px;
+    box-shadow: 0 0 15px aqua;
+}
+
+.lb-table {
+    max-width: 800px;
+    margin: auto;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    border-collapse: collapse;
+}
+
+thead > tr {
+    font-weight: 500;
+    background-color: #a82f2f;
+    color: white;
+}
+
+tbody > tr {
+    background-color: #7a2a2a;
+    color: aqua;
+}
+
+th,
+td {
+    padding: 15px 20px;
+}
