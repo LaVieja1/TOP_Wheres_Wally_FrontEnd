@@ -1,6 +1,6 @@
 const gameLoader = async () => {
     try {
-        const response = await fetch('http://localhost:3000/api/games');
+        const response = await fetch('https://top-wheres-wally-api.onrender.com/api/games');
         if (!response.ok) {
             throw new Error(`Esto es un error HTTP: El status es ${response.status}`);
         }

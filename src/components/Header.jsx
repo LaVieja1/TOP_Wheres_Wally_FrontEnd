@@ -79,27 +79,6 @@ const Header = ({ games, lastLbKey, gameTimer }) => {
             )}
         </nav>
     );
-/*
-    return (
-        <nav className='header-nav'>
-            <Link to="/" className='logo'>
-                <img src='/assets/wally-logo.png' className='logo-img nav-link'></img>
-            </Link>
-            <div className='header-timer'>
-                <GameTimer gameTimer={gameTimer} />
-            </div>
-            <div className='header-items'>
-                <InfoItems />
-            </div>
-            <Link to="/leaderboard" className='nav-link'>
-                Leaderboard
-            </Link>
-            <Link to="https://github.com/LaVieja1" className='nav-link'>
-                <Icon icon="mdi:github" width={80} height={40} />
-            </Link>
-        </nav>
-    )
-*/
 }
 
 export default Header;

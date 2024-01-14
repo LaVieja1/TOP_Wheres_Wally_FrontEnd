@@ -15,7 +15,7 @@ function App() {
     const getlbData = async () => {
       try {
         const response = await fetch(
-          'http://localhost:3000/api/entries',
+          'https://top-wheres-wally-api.onrender.com/api/entries',
         );
         if (!response.ok) {
           throw new Error(`Esto es un error HTTP: El status es ${response.status}`);

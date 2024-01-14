@@ -13,7 +13,7 @@ export default function EntryForm({ game, gameTimer }) {
         e.preventDefault();
         try {
             const response = await fetch(
-                'http://localhost:3000/api/games/' + game._id + '/entries',
+                'https://top-wheres-wally-api.onrender.com/api/games/' + game._id + '/entries',
                 {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },

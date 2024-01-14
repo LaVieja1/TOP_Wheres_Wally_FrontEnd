@@ -1,17 +1,17 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
-import { BrowserRouter, Route } from 'react-router-dom'
 import "./index.css";
 import Router from './components/Router.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  /*
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>
-  */
   <React.StrictMode>
-    <Router />
+    <Suspense fallback={<div style={{
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+    }}>Cargando...</div>}>
+      <Router />
+    </Suspense>
   </React.StrictMode>
 );

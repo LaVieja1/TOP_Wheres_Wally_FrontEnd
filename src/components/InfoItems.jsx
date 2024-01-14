@@ -26,7 +26,7 @@ export default function InfoItems({
                         onClick={type === 'dropdown' ? () => handleSelectItem(item) : null}
                     >
                         <img
-                            src={'http://localhost:3000/api/img/items/' + item._id}
+                            src={'https://top-wheres-wally-api.onrender.com/api/img/items/' + item._id}
                             alt=""
                             draggable={false}
                         />
