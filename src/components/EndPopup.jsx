@@ -1,3 +1,4 @@
+import EntryForm from './EntryForm';
 import './styles/EndPopup.css';
 
 export default function EndPopup({ game, gameTimer }) {
@@ -24,9 +25,7 @@ export default function EndPopup({ game, gameTimer }) {
                 <div className="end-popup">
                     <p className="timer-text">{'Terminaste en ' + time + '!'}</p>
                     <p>Subi tu tiempo a la tabla de puntuaciones</p>
-                    {
-                        //<EntryForm game={game} gameTimer={gameTimer} />
-                    }
+                    <EntryForm game={game} gameTimer={gameTimer} />
                 </div>
             </div>
         </div>

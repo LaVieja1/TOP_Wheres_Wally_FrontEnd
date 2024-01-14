@@ -1,0 +1,41 @@
+.form-group {
+    padding: 15px 0;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    text-align: left;
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.form-group span {
+    font-size: 15px;
+    font-style: italic;
+    font-weight: 400;
+}
+
+.form-group input {
+    width: 100%;
+    border: none;
+    font-size: 18px;
+    border-radius: 5px;
+    padding: 5px 7px;
+    color: rgb(0, 0, 0);
+    outline: rgb(87, 52, 69) 1px solid;
+}
+
+.form-group input:focus {
+    outline: rgb(52, 87, 85) 5px solid;
+}
+
+.entry-form button {
+    font-size: 16px;
+    background-color: rgb(42, 97, 74);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 7px 15px;
+    cursor: pointer;
+}
