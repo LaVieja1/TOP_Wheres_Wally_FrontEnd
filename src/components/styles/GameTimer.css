@@ -1,0 +1,11 @@
+.game-timer {
+    font-size: 20px;
+    padding-right: 10px;
+    color: white;
+}
+
+@media (max-width: 525px) {
+    .game-timer {
+        font-size: 18px;
+    }
+}

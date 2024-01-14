@@ -42,6 +42,31 @@
     display: none;
 }
 
+#item-count {
+    display: none;
+}
+
+@media (max-width: 1055px) {
+    #item-count {
+        display: block;
+        font-size: 18px;
+        background-color: rgb(168, 246, 255);
+        color: black;
+        font-weight: 500;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 30px;
+        cursor: pointer;
+    }
+
+    #item-count:hover {
+        background-color: rgb(127, 241, 254);;
+        transition: background-color 0.5s;
+    }
+}
+
 @media (max-width: 525px) {
     .header {
         padding: 20px 10px;
@@ -50,6 +75,13 @@
     .logo-img {
         max-width: 4rem;
         max-height: 4rem;
+    }
+
+    #item-count {
+        font-size: 17px;
+        width: 24px;
+        height: 24px;
+        line-height: 24px;
     }
 
     .nav {
