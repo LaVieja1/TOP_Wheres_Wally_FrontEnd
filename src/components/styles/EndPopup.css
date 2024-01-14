@@ -1,0 +1,32 @@
+.blocker {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
+    clip-path: inset(0 -100vmax);
+}
+
+.end-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.end-popup {
+    border-radius: 10px;
+    background-color: rgb(134, 56, 237);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 18px;
+    width: 350px;
+}
+
+.timer-text {
+    font-weight: 500;
+    font-size: 20px;
+}

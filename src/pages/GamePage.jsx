@@ -3,11 +3,13 @@ import { useOutletContext, useParams } from "react-router-dom";
 import GameImage from '../components/GameImage';
 import InfoItems from "../components/InfoItems";
 import TargetBox from '../components/TargetBox';
-import Header from "../components/Header";
-import Canvas from "../components/Canvas";
+//import Canvas from "../components/Canvas";
+import EndPopup from "../components/EndPopup";
+
+// STYLE
+import '../components/styles/GamePage.css'
 
 export default function GamePage() {
-/*
     const { games, gameTimer, setGameTimer } = useOutletContext();
     const { gameKey } = useParams();
     const game = games.find((obj) => obj.key == gameKey);
@@ -82,12 +84,147 @@ export default function GamePage() {
             // Convertir la coord de rango 35 a equivalent imagen
             let range = convertToNat(35, e.target.width, e.target.naturalWidth);
             setCoordRange(range);
+
+            // Cambiar el lugar del dropdown dependiendo la cantidad de items y location de la pantalla
+            switch (remainingItems.length) {
+                case 3:
+                    if (natY > e.target.naturalHeight / 2) {
+                        setDropdownTop(e.pageY - 325 + 64 + 64 + 'px');
+                    } else {
+                        setDropdownTop(e.pageY + 10 + 'px');
+                    }
+                    break;
+                case 2:
+                    if(natY > e.target.naturalHeight / 2) {
+                        setDropdownTop(e.pageY - 325 + 64 + 64 + 64 + 'px');
+                    } else {
+                        setDropdownTop(e.pageY + 10 + 'px');
+                    }
+                    break;
+                case 1:
+                    if (natY > e.target.naturalHeight / 2) {
+                        setDropdownTop(e.pageY - 325 + 64 + 64 + 64 + 64 + 'px');
+                    } else {
+                        setDropdownTop(e.pageY + 10 + 'px');
+                    }
+                    break;
+            }
+        } else {
+            // Esconder targetBox y dropdown si ya estan a la vista cuando clickeas
+            hideTargetBox();
         }
+    };
+
+    // Esconder targetBox y dropdown
+    const hideTargetBox = () => {
+        setShowTargetBox(false);
+        setShowDropdown(false);
+    };
+
+    // Esconder targetBox y dropdown cuando la ventana cambia de tamaño
+    useEffect(() => {
+        window.addEventListener('resize', hideTargetBox);
+
+        return () => {
+            window.removeEventListener('resize', hideTargetBox);
+        };
+    });
+
+    // Handle seleccionar game item de la lista del dropdown
+    const handleSelectItem = (item) => {
+        if (
+            currentX > item.coords.x - coordRange &&
+            currentX < item.coords.x + coordRange &&
+            currentY > item.coords.y - coordRange &&
+            currentY < item.coords.y + coordRange
+        ) {
+            // Marcar game item en el header como encontrado (y cambiar estilo)
+            const headerItem = document.getElementById('item' + item._id);
+            headerItem.classList.add('found');
+
+            // Remover item encontrado de los faltantes
+            const items = remainingItems.filter((obj) => obj._id != item._id);
+            setRemainingItems(items);
+
+            hideTargetBox();
+            setMessage(`Encontraste a ${item.name}!`);
+            setAlertClass('alert-success');
+        } else {
+            hideTargetBox();
+            setMessage('Segui buscando!');
+            setAlertClass('alert-fail');
+        }
+
+        // Handle alert
+        if (showAlert === false) {
+            // Mostrar alerta si ninguna alerta esta activa
+            setShowAlert(true);
+            startAlertTimer();
+        } else {
+            // Si hay una alerta activa, resetear y mostrar una nueva
+            resetAlertTimer();
+            resetAnimation();
+        }
+    };
+
+    // Comenzar la alert timer
+    const startAlertTimer = () => {
+        setAlertTimer(
+            setTimeout(() => {
+                setShowAlert(false);
+            }, 3000),
+        );
+    };
+
+    // Limpiar timer alerta y empezar uno nuevo
+    function resetAlertTimer() {
+        clearTimeout(alertTimer);
+        startAlertTimer();
     }
-*/
+
+    // Resetear animacion para la notificacion de alerta
+    const resetAnimation = () => {
+        const alert = document.querySelector('.alert');
+        alert.style.animation = 'none';
+        alert.offsetHeight;
+        alert.style.animation = null;
+    };
+
+    // Actualizar el contador de items en el header al de los items faltantes
+    useEffect(() => {
+        const itemCount = document.getElementById('item-count');
+        itemCount.textContent = remainingItems.length;
+    }, [remainingItems]);
+
+    // Fijarse si el juego termino.
+    useEffect(() => {
+        if (remainingItems.length < 1) {
+            setIsGameOver(true);
+        }
+    }, [remainingItems]);
+
     return (
         <div className="game-page">
-            <Canvas />
+            <GameImage game={game} imgClass="main-img" handleClick={handleClick} />
+            {showAlert && <div className={'alert ' + alertClass}>{message}</div>}
+            {showTargetBox && (
+                <TargetBox
+                    hideTargetBox={hideTargetBox}
+                    targetBoxLeft={targetBoxLeft}
+                    targetBoxTop={targetBoxTop}
+                />
+            )}
+            {showDropdown && (
+                <InfoItems
+                    items={remainingItems}
+                    type="dropdown"
+                    itemClass="dropdown-item"
+                    handleSelectItem={handleSelectItem}
+                    dropdownLeft={dropdownLeft}
+                    dropdownTop={dropdownTop}
+                />
+            )}
+            {isGameOver && <EndPopup game={game} gameTimer={gameTimer} />}
         </div>
     );
 }
