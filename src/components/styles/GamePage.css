@@ -53,11 +53,11 @@
 }
 
 @media (max-width: 1000px) {
-
+    /*
     .main-img {
         width: auto;
     }
-
+    */
     .alert {
         padding: 12px 17px;
         font-size: 15px;
