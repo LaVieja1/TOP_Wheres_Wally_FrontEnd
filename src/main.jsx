@@ -6,12 +6,6 @@ import Router from './components/Router.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Suspense fallback={<div style={{
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-    }}>Cargando...</div>}>
-      <Router />
-    </Suspense>
+    <Router />
   </React.StrictMode>
 );

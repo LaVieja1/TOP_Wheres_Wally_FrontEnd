@@ -10,6 +10,7 @@ function App() {
   const [lastlbKey, setLastlbKey] = useState(null);
   const [prevPath, setPrevPath] = useState(null);
   const [gameTimer, setGameTimer] = useState(0);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const getlbData = async () => {
@@ -28,7 +29,10 @@ function App() {
       }
     };
     getlbData();
+    setLoading(false);
   }, [updateLeaderboard]);
+
+  if (loading) return <p>Cargando...</p>
 
   return (
     <>
